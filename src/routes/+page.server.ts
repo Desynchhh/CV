@@ -1,5 +1,5 @@
 // import type { PublicGithubRepo } from "$lib/types";
-// import type { PageServerLoad } from "./$types";
+import type { PageServerLoad, Actions } from "./$types";
 
 // export const load = (async ({ fetch }) => {
 //     const token = process.env.GITHUB_ACCESS_TOKEN;
@@ -13,4 +13,17 @@
 //         repos: data,
 //     };
 // }) satisfies PageServerLoad;
+
+export const actions: Actions = {
+    switchLang: async ({ locals, request }) => {
+        try {
+            const formData = await request.formData();
+            const newLocale = formData.get("switchLang")?.toString();
+            locals.initLocale = newLocale ?? "en";
+        } catch (error) {
+            console.log(error);
+        }
+        return {};
+    },
+};
 

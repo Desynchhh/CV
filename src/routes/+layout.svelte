@@ -2,12 +2,11 @@
     import "../app.css";
     import { onMount } from 'svelte'
     import { themeChange } from 'theme-change'
-    
-    // NOTE: the element that is using one of the theme attributes must be in the DOM on mount
+    import { locales, locale } from "$lib/translations";
+
     onMount(() => {
         themeChange(false)
-        // 👆 false parameter is required for svelte
-    })
+    });
 </script>
 
 
@@ -40,12 +39,17 @@
                     <input data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" type="checkbox" class="daisy-toggle bg-transparent col-start-1 row-start-1 col-span-2 [--b1:219_14%_80%] checked:[--b1:215_28%_17%]" checked />
                 </div>
             </li>
+            <li class="justify-center items-center">
+                <form method="POST" action="/?/switchLang" class="m-0 p-0">
+                    <select name="switchLang" class="daisy-select daisy-select-info w-full max-w-xs daisy-select-sm" on:change={({ currentTarget }) => currentTarget.form?.submit()}>
+                        {#each $locales as l}
+                            <option value={l} selected={l === $locale}>{l}</option>
+                        {/each}
+                    </select>
+                </form>
+            </li>
         </ul>
     </div>
 </div>
 
-
-
-
-
-<slot></slot>
+<slot />
