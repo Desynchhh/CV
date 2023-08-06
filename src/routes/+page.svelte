@@ -3,7 +3,10 @@
     // export let data;
 </script>
 
+<svelte:head>
+    <title>Mikkel Larsen CV - {$t("common.home")}</title>
+</svelte:head>
+
 <div class="container">
     <h1>Welcome!</h1>
-    <p>Translate: {$t("common.hello")}</p>
 </div>
