@@ -1,3 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p class="text-3xl">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<button class="daisy-btn daisy-btn-primary normal-case">Button</button>
+<script lang="ts">
+    export let data;
+</script>
+
+<div class="container">
+    <h1>Welcome!</h1>
+</div>
