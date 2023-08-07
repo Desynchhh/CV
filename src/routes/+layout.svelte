@@ -5,18 +5,7 @@
     import { NavigationBar, Footer } from "$lib/RootLayoutComponents";
     
     onMount(() => {
-        themeChange(false)
-        // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        //     anchor.addEventListener('click', function (e) {
-        //         e.preventDefault();
-        //         if(anchor) {
-
-        //             document.querySelector(anchor.getAttribute('href'))?.scrollIntoView({
-        //                 behavior: 'smooth'
-        //             });
-        //         }
-        //     });
-        // });
+        themeChange(false);
     });
 </script>
 

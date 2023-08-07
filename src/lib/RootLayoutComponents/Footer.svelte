@@ -4,7 +4,7 @@
 </script>
 <footer class="daisy-footer p-10 bg-base-300 text-base-content">
     <div>
-        <span class="daisy-footer-title">{$t("common.about")}</span> 
+        <span class="daisy-footer-title">{$t("common.aboutMe")}</span> 
         <a href="/" class="daisy-link daisy-link-hover">Branding</a> 
         <a href="/" class="daisy-link daisy-link-hover">Design</a> 
         <a href="/" class="daisy-link daisy-link-hover">Marketing</a> 

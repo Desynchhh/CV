@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { locales, locale } from "$lib/translations";
+    import { t, locales, locale } from "$lib/translations";
 </script>
 
 <div class="daisy-navbar bg-primary text-primary-content">
@@ -11,15 +11,15 @@
             <li>
                 <details>
                     <summary>
-                        Om
+                        {$t("common.aboutMe")}
                     </summary>
                     <ul class="p-2 bg-base-100">
                         <li><a href="/#intro-background">Mikkel</a></li>
-                        <li><a href="/#education">Uddannelse & Job</a></li>
+                        <li><a href="/#education">{$t("common.jobAndEducation")}</a></li>
                     </ul>
                 </details>
             </li>
-            <li><a href="/">Projekter</a></li>
+            <li><a href="/">{$t("common.projects")}</a></li>
             <span class="divider relative mx-2"></span>
             <li>
                 <label class="daisy-swap daisy-swap-rotate">
