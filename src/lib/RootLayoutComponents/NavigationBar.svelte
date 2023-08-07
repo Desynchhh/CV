@@ -7,19 +7,20 @@
         <a href="/" class="pl-2 normal-case text-xl font-bold">Mikkel Larsen</a>
     </div>
     <div class="flex-none">
-        <ul class="daisy-menu daisy-menu-horizontal px-1">
-            <li><a href="/">Link</a></li>
+        <ul class="daisy-menu daisy-menu-horizontal px-1 z-20">
             <li>
                 <details>
                     <summary>
-                        Parent
+                        Om
                     </summary>
                     <ul class="p-2 bg-base-100">
-                        <li><a href="/">Link 1</a></li>
-                        <li><a href="/">Link 2</a></li>
+                        <li><a href="/#intro-background">Mikkel</a></li>
+                        <li><a href="/#education">Uddannelse & Job</a></li>
                     </ul>
                 </details>
             </li>
+            <li><a href="/">Projekter</a></li>
+            <span class="divider relative mx-2"></span>
             <li>
                 <label class="daisy-swap daisy-swap-rotate">
                     <!-- this hidden checkbox controls the state -->
@@ -45,3 +46,15 @@
         </ul>
     </div>
 </div>
+
+<style>
+    .divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        @apply border-x-neutral-content border-solid border-x;
+    }
+</style>
