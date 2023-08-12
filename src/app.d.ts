@@ -4,7 +4,7 @@ declare global {
     namespace App {
         // interface Error {}
         interface Locals {
-            initLocale: "da" | "en" | string;
+            initLocale: "da-DK" | "en-US" | string;
         }
         // interface PageData {}
         // interface Platform {}

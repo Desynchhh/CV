@@ -4,13 +4,13 @@ import type { Config } from "sveltekit-i18n";
 const config: Config = {
     loaders: [
         {
-            locale: "da",
+            locale: "da-DK",
             key: "common",
             loader: async () =>
                 (await import("./dictionaries/da.json")).default,
         },
         {
-            locale: "en",
+            locale: "en-US",
             key: "common",
             loader: async () =>
                 (await import("./dictionaries/en.json")).default,

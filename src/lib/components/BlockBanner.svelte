@@ -8,6 +8,7 @@
     let title = data.translations[0].title;
     let sub_title = data.translations[0].sub_title ?? "";
     let src = `http://0.0.0.0:8055/assets/${data.image}`;
+
     let ready = false;
     onMount(() => {
         ready = true;
