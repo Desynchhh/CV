@@ -1,45 +1,78 @@
 // import type { PublicGithubRepo } from "$lib/types";
 import type { PageServerLoad, Actions } from "./$types";
-import "dotenv/config";
+import { directus } from "$lib/server/directus";
+import { readItems } from "@directus/sdk";
+import type { Page, PageBlock } from "$lib/types/directus";
 
-export const load: PageServerLoad = async ({ fetch, locals }) => {
+export const load: PageServerLoad = async ({ locals }) => {
     // try {
-    const API_KEY: string | undefined = process.env.DIRECTUS_API_KEY;
-    const filter = JSON.stringify({
-        translations: {
-            _filter: {
-                languages_code: {
-                    _eq: locals.initLocale || "en-US",
+    const deepFilter = JSON.stringify({
+        collections: {
+            item: {
+                translations: {
+                    _filter: {
+                        languages_code: {
+                            _eq: "en-US",
+                        },
+                    },
                 },
             },
         },
     });
-    console.log(API_KEY);
-    const response = await fetch(
-        `http://0.0.0.0:8055/items/content_with_image?fields=image,style,translations.title,translations.content&deep=${filter}`,
-        {
-            headers: {
-                Authorization: `Bearer ${API_KEY}`,
+    const result = await directus.request(
+        readItems("page", {
+            filter: {
+                name: "home",
             },
-        }
+            limit: 1,
+            fields: [
+                {
+                    blocks: [
+                        // "*",
+                        "collection",
+                        {
+                            item: [
+                                // "*",
+                                "style",
+                                "image",
+                                {
+                                    translations: [
+                                        "languages_code",
+                                        "title",
+                                        "content",
+                                    ],
+                                },
+                                {
+                                    blocks: [
+                                        "*",
+                                        "carousel_id",
+                                        {
+                                            item: [
+                                                "id",
+                                                "style",
+                                                "image",
+                                                {
+                                                    translations: [
+                                                        "languages_code",
+                                                        "title",
+                                                        "content",
+                                                    ],
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        })
     );
-    const data: {
-        data: {
-            image: string;
-            style: "image-text" | "text-image";
-            translations: {
-                title: string;
-                content: string;
-            }[];
-        }[];
-    } = await response.json();
-
+    // console.log(JSON.stringify(result, null, 4));
     return {
-        content: data,
+        page: result[0] as Page,
     };
-    // } catch (error) {
-    // console.error(error);
-    // }
 };
 
 // export const load = (async ({ fetch }) => {

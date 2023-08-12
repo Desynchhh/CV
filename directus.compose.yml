@@ -18,7 +18,7 @@ services:
         volumes:
             - ./directus/uploads:/directus/uploads
             # If you want to load extensions from the host
-            # - ./extensions:/directus/extensions
+            - ./directus/extensions:/directus/extensions
         depends_on:
             - database
         environment:
