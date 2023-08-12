@@ -35,9 +35,12 @@ export const load: PageServerLoad = async ({ locals }) => {
                                 // "*",
                                 "style",
                                 "image",
+                                "start_date",
+                                "end_date",
                                 {
                                     translations: [
                                         "languages_code",
+                                        "main_title",
                                         "title",
                                         "content",
                                     ],
@@ -51,9 +54,12 @@ export const load: PageServerLoad = async ({ locals }) => {
                                                 "id",
                                                 "style",
                                                 "image",
+                                                "start_date",
+                                                "end_date",
                                                 {
                                                     translations: [
                                                         "languages_code",
+                                                        "main_title",
                                                         "title",
                                                         "content",
                                                     ],
@@ -69,7 +75,7 @@ export const load: PageServerLoad = async ({ locals }) => {
             ],
         })
     );
-    // console.log(JSON.stringify(result, null, 4));
+    console.log(JSON.stringify(result, null, 4));
     return {
         page: result[0] as Page,
     };

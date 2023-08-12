@@ -13,13 +13,31 @@ export type ContentWithImage = {
     }[];
 };
 
+export type EduExperience = {
+    id: string;
+    style: "text-image" | "image-text";
+    image: string;
+    start_date: string;
+    end_date?: string;
+    translations: {
+        id: string;
+        block_content_with_image_id: string;
+        languages_code: LanguageCodes;
+        main_title: string;
+        title: string;
+        content: string;
+    }[];
+};
+
 export type Carousel = {
     id: string;
     style: "buttons" | "arrows";
     blocks: CarouselBlock[];
 };
 
-type CarouselBlockCollections = "block_content_with_image";
+type CarouselBlockCollections =
+    | "block_content_with_image"
+    | "block_eduexperience";
 export type CarouselBlock = {
     id: string;
     carousel_id: string;
@@ -33,7 +51,10 @@ export type Page = {
     blocks: PageBlock[];
 };
 
-type PageCollections = "block_content_with_image" | "carousel";
+type PageCollections =
+    | "block_content_with_image"
+    | "block_eduexperience"
+    | "carousel";
 export type PageBlock = {
     id: string;
     page_id: string;
@@ -42,3 +63,4 @@ export type PageBlock = {
 };
 
 export type Block = PageBlock | CarouselBlock;
+
