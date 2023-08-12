@@ -4,6 +4,7 @@
     import { BlockContentWithImage } from "./BlockContentWithImage";
     import { BlockEduExperience } from "./BlockEduExperience";
     import { BlockContentText } from "./BlockContentText";
+    import BlockSkills from "./BlockSkills/BlockSkills.svelte";
 
     export let blocks: Block[] = [];
 
@@ -11,6 +12,7 @@
         block_content_with_image: BlockContentWithImage,
         block_content_text: BlockContentText,
         block_eduexperience: BlockEduExperience,
+        block_skills: BlockSkills,
         carousel: BlockCarousel,
     };
 </script>

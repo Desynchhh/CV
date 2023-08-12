@@ -14,4 +14,7 @@
 <main>
     <BlockBanner data={data.page.banner} />
     <PageBuilder blocks={page.blocks} />
+    <!-- <pre>
+        {JSON.stringify(data, null, 4)}
+    </pre> -->
 </main>

@@ -33,11 +33,23 @@ export const load: PageServerLoad = async ({ locals }) => {
                         "collection",
                         {
                             item: [
-                                // "*",
+                                "*",
                                 "style",
                                 "image",
                                 "start_date",
                                 "end_date",
+                                {
+                                    skill: [
+                                        "skills",
+                                        "color",
+                                        {
+                                            translations: [
+                                                "languages_code",
+                                                "title",
+                                            ],
+                                        },
+                                    ],
+                                },
                                 {
                                     translations: [
                                         "languages_code",
@@ -78,7 +90,7 @@ export const load: PageServerLoad = async ({ locals }) => {
     );
     let page = result[0] as Page;
     page = filterPageLang(page, locals.initLocale);
-    // console.log(JSON.stringify(result, null, 4));
+    // console.log(JSON.stringify(result, null, 2));
     return {
         page: page,
     };

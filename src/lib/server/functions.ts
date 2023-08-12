@@ -10,6 +10,13 @@ export function filterPageLang(page: Page, locale: string) {
         if ("translations" in block.item) {
             block.item.translations =
                 block.item.translations.filter(filterLangCode);
+            if ("skill" in block.item) {
+                block.item.skill.forEach((skillBlock, skillIndex) => {
+                    skillBlock.translations =
+                        skillBlock.translations.filter(filterLangCode);
+                    return;
+                });
+            }
             return;
         }
         if ("blocks" in block.item) {
@@ -19,6 +26,9 @@ export function filterPageLang(page: Page, locale: string) {
                 return;
             });
             return;
+        }
+        if ("skill" in block.item) {
+            block.item;
         }
     });
     return page;
