@@ -27,6 +27,19 @@ export const load: PageServerLoad = async ({ locals }) => {
             limit: 1,
             fields: [
                 {
+                    banner: [
+                        "animate",
+                        "image",
+                        {
+                            translations: [
+                                "languages_code",
+                                "sub_title",
+                                "title",
+                            ],
+                        },
+                    ],
+                },
+                {
                     blocks: [
                         // "*",
                         "collection",
@@ -75,7 +88,7 @@ export const load: PageServerLoad = async ({ locals }) => {
             ],
         })
     );
-    console.log(JSON.stringify(result, null, 4));
+    // console.log(JSON.stringify(result, null, 4));
     return {
         page: result[0] as Page,
     };

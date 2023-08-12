@@ -1,2 +1,2 @@
-export { default as Banner } from "./Banner.svelte";
+export { default as BlockBanner } from "./BlockBanner.svelte";
 

@@ -24,7 +24,7 @@
 
 <div class="daisy-hero min-h-fit py-6 bg-base-200">
     <div
-        class="daisy-hero-content flex-col {data.style === 'image-text'
+        class="daisy-hero-content flex-col gap-12 {data.style === 'image-text'
             ? 'lg:flex-row-reverse'
             : 'lg:flex-row'}"
     >

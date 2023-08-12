@@ -1,5 +1,29 @@
 type LanguageCodes = "en-US" | "da-DK";
 
+type PageCollections =
+    | "block_content_with_image"
+    | "block_eduexperience"
+    | "block_content_text"
+    | "carousel";
+
+type CarouselBlockCollections =
+    | "block_content_with_image"
+    | "block_eduexperience"
+    | "block_content_text";
+
+export type Banner = {
+    id: string;
+    animate: boolean;
+    image: string;
+    translations: {
+        id: string;
+        block_banner_id: string;
+        languages_code: LanguageCodes;
+        title: string;
+        sub_title: string;
+    }[];
+};
+
 export type ContentWithImage = {
     id: string;
     style: "text-image" | "image-text";
@@ -46,10 +70,6 @@ export type Carousel = {
     blocks: CarouselBlock[];
 };
 
-type CarouselBlockCollections =
-    | "block_content_with_image"
-    | "block_eduexperience"
-    | "block_content_text";
 export type CarouselBlock = {
     id: string;
     carousel_id: string;
@@ -59,15 +79,11 @@ export type CarouselBlock = {
 
 export type Page = {
     id: string;
+    banner: Banner;
     name: string;
     blocks: PageBlock[];
 };
 
-type PageCollections =
-    | "block_content_with_image"
-    | "block_eduexperience"
-    | "block_content_text"
-    | "carousel";
 export type PageBlock = {
     id: string;
     page_id: string;
