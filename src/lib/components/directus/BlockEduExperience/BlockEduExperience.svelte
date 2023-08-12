@@ -19,6 +19,7 @@
         );
         return `${year} ${monthName}`;
     }
+    const styles = "underline text-secondary";
 </script>
 
 <div class="daisy-hero min-h-fit py-6 bg-base-200">
@@ -34,7 +35,10 @@
             {/if}
             <h3 class="text-3xl font-bold inline-block">{title}</h3>
             <small class="inline ml-3"><i>{startDate} - {endDate}</i></small>
-            <span>{@html content}</span>
+            {@html content}
         </div>
     </div>
 </div>
+
+<style>
+</style>

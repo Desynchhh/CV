@@ -13,7 +13,7 @@
         </div>
     {/each}
 </div>
-<div class="flex justify-center w-full py-2 gap-2">
+<div class="flex justify-center w-full pt-2 pb-4 gap-2 bg-base-200">
     {#each data.blocks as block, i}
         <a href={`#${block.item.id}`} class="daisy-btn daisy-btn-xs">{i + 1}</a>
     {/each}

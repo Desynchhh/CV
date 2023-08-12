@@ -20,3 +20,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    a {
+        @apply underline text-secondary;
+    }
+</style>

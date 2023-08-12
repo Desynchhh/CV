@@ -5,3 +5,7 @@
 .daisy-hero-content div p {
     @apply py-1
 }
+
+.daisy-hero-content div a {
+    @apply underline text-secondary
+}

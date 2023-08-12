@@ -13,6 +13,17 @@ export type ContentWithImage = {
     }[];
 };
 
+export type ContentText = {
+    id: string;
+    translations: {
+        id: string;
+        block_content_text_id: string;
+        languages_code: LanguageCodes;
+        title: string;
+        content: string;
+    }[];
+};
+
 export type EduExperience = {
     id: string;
     style: "text-image" | "image-text";
@@ -37,7 +48,8 @@ export type Carousel = {
 
 type CarouselBlockCollections =
     | "block_content_with_image"
-    | "block_eduexperience";
+    | "block_eduexperience"
+    | "block_content_text";
 export type CarouselBlock = {
     id: string;
     carousel_id: string;
@@ -54,6 +66,7 @@ export type Page = {
 type PageCollections =
     | "block_content_with_image"
     | "block_eduexperience"
+    | "block_content_text"
     | "carousel";
 export type PageBlock = {
     id: string;
