@@ -1,22 +1,25 @@
 <script lang="ts">
     import type { EduExperience } from "$lib/types/directus";
-    import { t } from "$lib/translations";
+    import { t, locale } from "$lib/translations";
 
     export let data: EduExperience;
 
-    const src = `http://10.0.0.23:8055/assets/${data.image}`;
+    const src = `http://cv.directus.budgeze.dk/assets/${data.image}`;
     const { start_date, end_date } = data;
     const { main_title, title, content } = data.translations[0];
 
     let startDate = formatDate(start_date);
-    let endDate: string = end_date ? formatDate(end_date) : $t("current");
+    let endDate: string = $t("current");
+    if (end_date !== "" && end_date) {
+        endDate = formatDate(end_date);
+    }
 
     function formatDate(date: string) {
         const [year, month, _day] = date.split("-");
         // TODO: Dynamic locale
-        const monthName = Intl.DateTimeFormat("en", { month: "short" }).format(
-            new Date(month)
-        );
+        const monthName = Intl.DateTimeFormat($locale, {
+            month: "short",
+        }).format(new Date(date));
         return `${year} ${monthName}`;
     }
     const styles = "underline text-secondary";
