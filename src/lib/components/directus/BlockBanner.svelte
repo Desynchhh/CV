@@ -18,9 +18,7 @@
 <div class="daisy-carousel w-full">
     <div class="daisy-carousel-item relative w-full">
         <img {src} class="w-full" alt="banner" />
-        <div
-            class="absolute transform -translate-y-1/2 -translate-x-1/2 left-1/2 top-1/2"
-        >
+        <div class="absolute transform -translate-y-1/2 right-1/2 top-1/2">
             <h1 class="text-8xl text-white drop-shadow-md text-center">
                 {#if title}
                     {#if ready}
