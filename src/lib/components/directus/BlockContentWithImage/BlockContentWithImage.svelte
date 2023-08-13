@@ -3,7 +3,7 @@
 
     export let data: ContentWithImage;
 
-    const src = `http://0.0.0.0:8055/assets/${data.image}`;
+    const src = `http://10.0.0.23:8055/assets/${data.image}`;
     const { title, content } = data.translations[0];
 </script>
 

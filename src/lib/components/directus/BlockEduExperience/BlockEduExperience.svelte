@@ -4,7 +4,7 @@
 
     export let data: EduExperience;
 
-    const src = `http://0.0.0.0:8055/assets/${data.image}`;
+    const src = `http://10.0.0.23:8055/assets/${data.image}`;
     const { start_date, end_date } = data;
     const { main_title, title, content } = data.translations[0];
 
