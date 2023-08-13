@@ -17,7 +17,7 @@
     {#each data.blocks as block, i}
         <a
             href={`#${block.item.id}`}
-            class="daisy-btn daisy-btn-xs bg-accent hover:bg-accent-focus text-black hover:text-grey-200"
+            class="daisy-btn daisy-btn-xs bg-accent hover:bg-accent-focus text-white"
             >{i + 1}</a
         >
     {/each}
