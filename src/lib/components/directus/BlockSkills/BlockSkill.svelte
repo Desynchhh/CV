@@ -2,6 +2,8 @@
     import type { Skill } from "$lib/types/directus";
 
     export let skill: Skill;
+    const daisy =
+        "daisy-badge-primary daisy-badge-secondary daisy-badge-accent daisy-badge-ghost daisy-badge-neutral border-primary border-secondary border-accent border-ghost border-neutral";
 </script>
 
 <div
